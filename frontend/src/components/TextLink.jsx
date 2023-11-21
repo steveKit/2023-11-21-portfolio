@@ -45,7 +45,7 @@ const Highlight = styled.div`
     }
 
     &.left.active {
-        width: 100%;
+        width: 102%;
         background-color: var(--tertiary-accent-color);
     }
 
@@ -53,11 +53,11 @@ const Highlight = styled.div`
         justify-self: flex-end;
         align-self: flex-end;
         right: -0.25rem;
-        transition: all ease 550ms;
+        transition: all ease 700ms;
     }
 
     &.right.active {
-        width: 100%;
+        width: 102%;
         background-color: var(--tertiary-accent-color);
     }
 `
