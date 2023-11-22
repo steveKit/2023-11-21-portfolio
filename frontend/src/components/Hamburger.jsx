@@ -21,7 +21,9 @@ const Hamburger = () => {
 };
 
 const expand = keyframes`
-    
+    100% {
+        margin: ;
+    }
 `
 
 
@@ -41,10 +43,10 @@ const HamburgerLayer = styled.div`
     height: 1px;
     background-color: var(--primary-accent-color);
     margin: 5px;
-    transition: all 250ms;
+    transition: all 150ms;
 
     &.active {
-        margin: 10px 5px;
+        margin: 8px 5px;
     }
 `
 

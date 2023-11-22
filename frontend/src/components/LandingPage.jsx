@@ -11,9 +11,9 @@ const LandingPage = () => {
                 </IntroText>
                 <TextBody>
                     <p>I'm a full-stack web developer</p>
-                    <p>Available remotely from Calgary, Alberta</p>
-                    <p>Check out my <TextLink text={'recent projects'} location={'portfolio'} /></p>
-                    <p>Contact me <TextLink text={'here'} location={'contact'} /></p>
+                    <p>available remotely from Calgary, Alberta.</p>
+                    <p>Check out my <TextLink text={'recent projects'} location={'portfolio'} />.</p>
+                    <p>Contact me <TextLink text={'here'} location={'contact'} />.</p>
                 </TextBody>
             </TextContainer>
         </Wrapper>

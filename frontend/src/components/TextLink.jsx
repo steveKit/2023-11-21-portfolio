@@ -25,15 +25,15 @@ const TextLink = ({ text, location}) => {
     )
 };
 
-const LinkContainer = styled.div`
+const LinkContainer = styled.span`
     display: inline-flex;
     width: fit-content;
     position: relative;
 `
 
-const Highlight = styled.div`
+const Highlight = styled.span`
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.6;
     width: 0%;
     height: 1.5rem;
     transition: all ease 400ms;
@@ -41,7 +41,7 @@ const Highlight = styled.div`
     &.left {
         justify-self: flex-start;
         align-self: flex-start;
-        left: -0.25rem;
+        left: -0.3ch;
     }
 
     &.left.active {
@@ -52,13 +52,29 @@ const Highlight = styled.div`
     &.right {
         justify-self: flex-end;
         align-self: flex-end;
-        right: -0.25rem;
-        transition: all ease 650ms;
+        right: -0.3ch;
+        transition-delay: 150ms;
     }
 
     &.right.active {
         width: 102%;
         background-color: var(--hover-shadow);
+    }
+
+    @media (hover: none) {
+        width: 102%;
+
+        &.left {
+            transition-delay: 400ms;
+            background-color: var(--tertiary-accent-color);
+            top: 1px;
+        }
+
+        &.right {
+            transition-delay: 650ms;
+            background-color: var(--hover-shadow);
+            bottom: 1px;
+        }
     }
 `
 
