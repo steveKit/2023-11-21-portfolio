@@ -7,6 +7,7 @@ export default createGlobalStyle`
         --primary-accent-color: #D2D2CD;
         --secondary-accent-color: #5c707b;
         --tertiary-accent-color: #474850;
+        --hover-shadow: #383941;
         /* --heading-font-family: 'Poppins', sans-serif;
         --body-font-family: 'Urbanist', sans-serif; */
         cursor: default;   
@@ -38,18 +39,17 @@ export default createGlobalStyle`
         display: block;
     }
     body {
+        font-family: 'Epilogue', sans-serif;
         background-color: var(--secondary-color);
         line-height: 1.2;
     }
     h1 {
-        font-family: 'Epilogue', sans-serif;
         color: var(--primary-color);
         font-size: 2rem;
         font-weight: 700;
         padding-bottom: 0.5rem;
     }
     p {
-        font-family: 'Epilogue', sans-serif;
         font-size: 1.3rem;
         font-weight: 200;
         color: var(--primary-accent-color);

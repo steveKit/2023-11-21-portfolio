@@ -35,7 +35,7 @@ const Highlight = styled.div`
     position: absolute;
     opacity: 0.5;
     width: 0%;
-    height: 1rem;
+    height: 1.5rem;
     transition: all ease 400ms;
 
     &.left {
@@ -53,12 +53,12 @@ const Highlight = styled.div`
         justify-self: flex-end;
         align-self: flex-end;
         right: -0.25rem;
-        transition: all ease 700ms;
+        transition: all ease 650ms;
     }
 
     &.right.active {
         width: 102%;
-        background-color: var(--tertiary-accent-color);
+        background-color: var(--hover-shadow);
     }
 `
 

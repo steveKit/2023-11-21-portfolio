@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useState } from "react";
 const Hamburger = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -20,6 +20,11 @@ const Hamburger = () => {
     )
 };
 
+const expand = keyframes`
+    
+`
+
+
 const HamburgerWrapper = styled.button`
     position: absolute;
     right: 5%;
@@ -36,7 +41,7 @@ const HamburgerLayer = styled.div`
     height: 1px;
     background-color: var(--primary-accent-color);
     margin: 5px;
-    transition: all 200ms;
+    transition: all 250ms;
 
     &.active {
         margin: 10px 5px;
