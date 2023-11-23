@@ -2,12 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     :root {
-        --primary-color: #F5F5F5;
-        --secondary-color: #1F1F1F;
-        --primary-accent-color: #D2D2CD;
-        --secondary-accent-color: #5c707b;
-        --tertiary-accent-color: #474850;
-        --hover-shadow: #383941;
+        --light-primary: #F5F5F5;
+        --dark-primary: #1F1F1F;
+        --light-secondary: #D2D2CD;
+        --dark-secondary: #474850;
+        --accent: #5c707b;
+        --light-shadow: #979793;
+        --dark-shadow: #383941;
         /* --heading-font-family: 'Poppins', sans-serif;
         --body-font-family: 'Urbanist', sans-serif; */
         cursor: default;   
@@ -40,11 +41,11 @@ export default createGlobalStyle`
     }
     body {
         font-family: 'Epilogue', sans-serif;
-        background-color: var(--secondary-color);
+        background-color: var(--dark-primary);
         line-height: 1.2;
     }
     h1 {
-        color: var(--primary-color);
+        color: var(--light-primary);
         font-size: 2rem;
         font-weight: 700;
         padding-bottom: 0.5rem;
@@ -52,12 +53,12 @@ export default createGlobalStyle`
     p {
         font-size: 1.3rem;
         font-weight: 200;
-        color: var(--primary-accent-color);
+        color: var(--light-secondary);
         line-height: 1.75rem;
     }
     a {
 		text-decoration: none;
-		color: var(--accent-color);
+		color: var(--light-secondary);
 	}
     ol, ul {
         list-style: none;

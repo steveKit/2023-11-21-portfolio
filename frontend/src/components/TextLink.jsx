@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 import styled from "styled-components";
 
-const TextLink = ({ text, location}) => {
+const TextLink = ({ text, className, href }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -11,15 +11,13 @@ const TextLink = ({ text, location}) => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <LinkItem
-                to={`/${location}`}
+                to={`${href}`}
                 className={`${isHovered ? "active" : ""}`}
             >
                 {text}
-            </LinkItem>
-            <Highlight className={`${isHovered ? "active" : ""} left`} />
-            <Highlight className={`${isHovered ? "active" : ""} right`} />
-
-            
+                <Highlight className={`${isHovered ? "active" : ""} left`} />
+                <Highlight className={`${isHovered ? "active" : ""} right`} />   
+            </LinkItem>         
         </LinkContainer>
         
     )
@@ -33,58 +31,60 @@ const LinkContainer = styled.span`
 
 const Highlight = styled.span`
     position: absolute;
+    bottom: 6%;
     opacity: 0.6;
     width: 0%;
-    height: 1.5rem;
+    height: 1px;
     transition: all ease 400ms;
 
     &.left {
-        justify-self: flex-start;
-        align-self: flex-start;
-        left: -0.3ch;
-    }
-
-    &.left.active {
-        width: 102%;
-        background-color: var(--tertiary-accent-color);
+        left: -3%;
+        z-index: -1;
     }
 
     &.right {
-        justify-self: flex-end;
-        align-self: flex-end;
-        right: -0.3ch;
+        right: -3%;
+        height: 93%;
         transition-delay: 150ms;
+        border-radius: 3px 3px 0 0;
+        z-index: -2;
     }
 
-    &.right.active {
-        width: 102%;
-        background-color: var(--hover-shadow);
+    &.active {
+        width: 106%;
+
+        &.left {
+            background-color: var(--light-secondary);
+        }
+
+        &.right {
+            background-color: var(--dark-shadow);
+        }
     }
 
     @media (hover: none) {
-        width: 102%;
+        width: 106%;
 
         &.left {
             transition-delay: 400ms;
-            background-color: var(--tertiary-accent-color);
-            top: 1px;
+            background-color: var(--light-secondary);
         }
 
         &.right {
             transition-delay: 650ms;
-            background-color: var(--hover-shadow);
-            bottom: 1px;
+            background-color: var(--dark-shadow);
         }
     }
 `
 
 const LinkItem = styled(Link)`
+    font-size: inherit;
     font-weight: 400;
-    z-index: 10;
     transition: all ease 400ms;
+    z-index: 2;
 
     &.active {
-        color: var(--primary-color);
+        color: var(--light-primary);
     }
 `
 

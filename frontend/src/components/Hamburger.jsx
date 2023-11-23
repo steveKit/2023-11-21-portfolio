@@ -1,34 +1,60 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 import { useState } from "react";
+import Menu from "./Menu";
+
 const Hamburger = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+
+    const burgerLayer = {
+        rest: {
+            transition: {
+                duration: 0.25,
+                type: "tween",
+                ease: "easeIn",
+            },
+            margin: "5px"
+        },
+        hover: {
+            transition: {
+                duration: 0.075,
+                type: "tween",
+                ease: "easeOut"
+            },
+            margin: "7px"
+        }
+    };
 
     const clickHandler = () => {
-
-    }
-
+        setIsActive(!isActive);
+    };
+    
     return (
         <HamburgerWrapper
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={clickHandler()}
+            onClick={clickHandler}
+            as={motion.button}
+            initial="rest"
+            whileHover="hover"
         >
-            <HamburgerLayer />
-            <HamburgerLayer className={`${isHovered ? "active" : ""}`} />
-            <HamburgerLayer />
+            {[0, 1, 2].map((index) => (
+                <HamburgerLayer
+                    as={motion.div}
+                    key={index}
+                    className="burgerLayer"
+                    isActive={isActive}
+                    variants={burgerLayer}
+                />
+            ))}
+            {isActive && (
+                <Menu />                   
+            )}
         </HamburgerWrapper>
     )
 };
 
-const expand = keyframes`
-    100% {
-        margin: ;
-    }
-`
-
-
-const HamburgerWrapper = styled.button`
+const HamburgerWrapper = styled(motion.button)`
     position: absolute;
+    top: 3%;
     right: 5%;
     display: flex;
     flex-direction: column;
@@ -36,18 +62,14 @@ const HamburgerWrapper = styled.button`
     justify-content: center;
     width: 100px;
     height: 100px;
+    z-index: 10;
 `
 
-const HamburgerLayer = styled.div`
+const HamburgerLayer = styled(motion.div)`
     width: 50px;
     height: 1px;
-    background-color: var(--primary-accent-color);
-    margin: 5px;
-    transition: all 150ms;
-
-    &.active {
-        margin: 8px 5px;
-    }
+    z-index: 15;
+    background-color: ${props => (props.isActive ? "var(--dark-secondary)" : "var(--light-secondary)")};
 `
 
 export default Hamburger;
