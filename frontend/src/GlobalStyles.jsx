@@ -7,6 +7,7 @@ export default createGlobalStyle`
         --light-secondary: #D2D2CD;
         --dark-secondary: #474850;
         --accent: #5c707b;
+        --light-accent: #e6e6e6;
         --light-shadow: #979793;
         --dark-shadow: #383941;
         /* --heading-font-family: 'Poppins', sans-serif;
@@ -50,6 +51,12 @@ export default createGlobalStyle`
         font-weight: 700;
         padding-bottom: 0.5rem;
     }
+    h2 {
+        color: var(--accent);
+        font-weight: 100;
+        font-size: 1rem;
+        border-bottom: solid 1px ;
+    }
     p {
         font-size: 1.3rem;
         font-weight: 200;
@@ -59,6 +66,7 @@ export default createGlobalStyle`
     a {
 		text-decoration: none;
 		color: var(--light-secondary);
+        -webkit-tap-highlight-color: transparent;
 	}
     ol, ul {
         list-style: none;

@@ -54,8 +54,8 @@ const Hamburger = () => {
 
 const HamburgerWrapper = styled(motion.button)`
     position: absolute;
-    top: 3%;
-    right: 5%;
+    top: 4vh;
+    right: 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
