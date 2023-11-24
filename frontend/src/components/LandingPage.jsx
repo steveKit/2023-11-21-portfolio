@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TextLink from "./TextLink";
+import TextLink from "./Navigation/TextLink";
 const LandingPage = () => {
 
 

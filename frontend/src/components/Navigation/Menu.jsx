@@ -52,7 +52,13 @@ const MenuContainer = styled.div`
 `
 
 const BlurMask = styled.div`
-
+    position: absolute;
+    left: 0;
+    backdrop-filter: brightness(75%) blur(3px);
+    width: 100%;
+    height: 100%;
+    transition: all ease 1000ms;
+    z-index: -1;
 `
 
 const MenuWrapper = styled.div`

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
-import Hamburger from "./components/Hamburger";
+import Hamburger from "./components/Navigation/Hamburger";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
